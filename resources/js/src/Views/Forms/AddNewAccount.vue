@@ -12,9 +12,9 @@ import JetValidationErrors from '@/Components/ValidationErrors.vue'
 import useAccounts from '@/src/Composables/API/private/use-accounts.js'
 
 const form = useForm({
-   Account_Name: 'Austyn Brakus',
-   Website: 'adoppo.com',
-   Phone: '+1-230-541-8578'
+   Account_Name: 'New Account',
+   Website: 'newacc.com',
+   Phone: '+1-111-111-1111'
 })
 
 const submit = (_onSuccess) => {

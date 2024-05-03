@@ -44,8 +44,11 @@ class ZohoCrmDealController extends Controller
             'Amount' => ['required', 'max:50'],
         ]);
         $deals = ZohoManager::useModule('Deals');
-        $accounts = ZohoManager::useModule('Accounts');
-        $account = $accounts->getRecord($validatedData['Account_Name']['id']);
+       // $accounts = ZohoManager::useModule('Accounts');
+        //$account = $accounts->getRecord($validatedData['Account_Name']['id']);
+        $account = new Record();
+        $account->setName($validatedData['Account_Name']['name']);
+        $account->setId($validatedData['Account_Name']['id']);
         $stage = new Choice($validatedData['Stage']);
         $deals->create([
             'Account_Name' => $account,
