@@ -70,7 +70,6 @@ const onClickCrudBtn = (k, itm) => {
       refDialogPromtButton.value = 'Delete'
       refDialogPromtHeader.value = 'Delete Deal'
       onNextFormDeal.value = () => {
-         console.log('Delete Deal')
          refresMainDeals(mainAccount.value)
       }
    }
@@ -89,19 +88,12 @@ const refresMainDeals = (acc) => {
                randomUserPicture.value = results[0].picture.large
             }
          })
-          //console.log(acc)
-          //console.log(data)
-          //Object.values(data).forEach(element => {
-          // console.log(element)
-          //});
          store.mainAccountDeals = Object.values(data).map((deal) => {
             return ['Account_Name', 'Deal_Name', 'Stage', 'Amount', 'Closing_Date', 'id'].reduce((carry, key) => {
-              console.log('testtext')
             carry[key] = deal[key];
           return carry;
         }, {})
         }).filter(_d => _d.Account_Name.id === acc.id)
-        console.log(store.mainAccountDeals)
 
    })
 }

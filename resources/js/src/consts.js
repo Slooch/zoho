@@ -15,7 +15,6 @@ export default {
   }),
    refresMainAccounts: (ok) => useAccounts().getAll().then((data) => {
       store.mainAccounts = data
-      console.log(store.mainAccounts)
    }),
    viewsRoute: (cmpN) => {
       // Inertia.post(route('logout'))
